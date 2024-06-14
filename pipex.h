@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 01:23:19 by shebaz            #+#    #+#             */
-/*   Updated: 2024/06/14 15:55:08 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/14 23:21:26 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@ void	execute_cmd1(int pipe_fd_0, int pipe_fd_1, char **argv, char **envp);
 void	execute_commands(char **argv, char **envp);
 char	**arr(char *cmd);
 void	remove_string(char **str);
-int		check_param(char *infile, char *cmd1, char *cmd2, char **envp);
+int		check_param(char **argv, char **envp);
 int		check_full_command(char *cmd);
 void	norm(int pipe_fd_0, int pipe_fd_1, int pid1, int pid2);
 void	check_inverted_commas(char *cmd);
 void	invalid_envp_path(char **argv);
 void	exe_protect(char *coomand_path, char **new_arr);
+int		check_permission(char *infile, char *outfile, int n);
+int		check_all(char **argv,char **arr2, char **envp);
+void	waaaaa(int *count, char **arr1, char **arr2);
 #endif

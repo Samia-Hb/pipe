@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 23:49:45 by shebaz            #+#    #+#             */
-/*   Updated: 2024/06/14 15:55:31 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/14 23:20:41 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,35 @@ void	exe_protect(char *command_path, char **new_arr)
 	free(command_path);
 	remove_string(new_arr);
 	exit(1);
+}
+
+void waaaaa(int *count, char **arr1, char **arr2)
+{
+	*count = 0;
+	remove_string(arr1);
+	remove_string(arr2);
+	return ;
+}
+
+int check_all(char **argv,char **arr2, char **envp)
+{
+	char	*result;
+	char	*trimmed;
+	
+	if (!check_permission(argv[1], argv[4], 1))
+	{
+		result = get_executable(arr2[0], find_path(envp));
+		if (check_full_command(argv[3]) == -4 && ft_counter(argv[3], ' ') > 1)
+		{
+			trimmed = ft_strtrim(argv[3], "'");
+			ft_printf("zsh: command not found: %s\n", trimmed);
+			free(trimmed);
+		}
+		else if (!result)
+			ft_printf("zsh: command not found: %s\n", arr2[0]);
+		if (result)
+			free(result);
+		return (0);
+	}
+	return (1);
 }

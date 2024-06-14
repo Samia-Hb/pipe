@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:35:00 by shebaz            #+#    #+#             */
-/*   Updated: 2024/06/14 15:56:13 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/14 22:48:35 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,9 @@ void	execute_cmd1(int pipe_fd_0, int pipe_fd_1, char **argv, char **envp)
 	close(pipe_fd_0);
 	dup2(pipe_fd_1, STDOUT_FILENO);
 	close(pipe_fd_1);
-	infile_fd = open(argv[1], O_RDONLY);
+	infile_fd = open(argv[1], O_RDONLY, 0777);
 	if (infile_fd == -1)
-	{
-		write(STDERR_FILENO, "First argument : Permission denied \n", 36);
 		exit(0);
-	}
 	dup2(infile_fd, STDIN_FILENO);
 	close(infile_fd);
 	new_arr = arr(argv[2]);
@@ -93,10 +90,7 @@ void	execute_cmd2(int pipe_fd_0, int pipe_fd_1, char **argv, char **envp)
 	close(pipe_fd_0);
 	outfile_fd = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC);
 	if (outfile_fd == -1)
-	{
-		write(STDERR_FILENO, "last argument : Permission denied \n", 34);
 		exit(0);
-	}
 	dup2(outfile_fd, STDOUT_FILENO);
 	close(outfile_fd);
 	new_arr = arr(argv[3]);
