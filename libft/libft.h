@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:52:23 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/20 21:15:56 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/15 10:11:54 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_list
 
 char	*ft_strcat(char *dest, char *src);
 char	*ft_strcpy(char *dest, char *src);
+char	*check_s(char *s);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

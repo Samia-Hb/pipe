@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 01:23:19 by shebaz            #+#    #+#             */
-/*   Updated: 2024/06/14 23:21:26 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/15 16:31:22 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ void	norm(int pipe_fd_0, int pipe_fd_1, int pid1, int pid2);
 void	check_inverted_commas(char *cmd);
 void	invalid_envp_path(char **argv);
 void	exe_protect(char *coomand_path, char **new_arr);
-int		check_permission(char *infile, char *outfile, int n);
-int		check_all(char **argv,char **arr2, char **envp);
+int		check_permission(char **argv, char **envp, char **arr1, int n);
 void	waaaaa(int *count, char **arr1, char **arr2);
+void	exe_protect(char *command_path, char **new_arr);
+void	clear(char **arr1, char **arr2, char *result1, char *result2);
+void	check_files_lenght(char **argv);
 #endif

@@ -1,0 +1,16 @@
+ft_printf
+get_next_line
+infile.txt
+libft
+main.c
+Makefile
+mini_function.c
+outfile
+outfile.txt
+outfile.txt]
+parsing.c
+pipex
+pipex.c
+pipex.h
+pipex_utils_2.c
+pipex_utils.c

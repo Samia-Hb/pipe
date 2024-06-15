@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 13:03:44 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/20 21:57:35 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/15 10:11:13 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ char	**ft_split(char *s, char c)
 
 	if (s == NULL)
 		return (NULL);
+	s = check_s(s);
 	if (ft_strlen(s) == 0)
 	{
 		strings = malloc(1 * sizeof(char *));
